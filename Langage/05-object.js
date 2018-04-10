@@ -54,6 +54,7 @@ Math.random = randomBackup;
 // 1 - object literal (assez proche de JSON)
 // - mono-instance
 // - très simples à créer (coords x, y)
+// - pas besoin d'un type
 
 const coords = {
   x: 10,
@@ -117,6 +118,8 @@ const romain = new Contact('Romain');
 console.log(typeof romain);
 console.log(romain._prenom); // si _key => propriété privé
 console.log(romain.hello());
+console.log(romain.hasOwnProperty('_prenom')); // true
+console.log(romain.hasOwnProperty('hello')); // false
 
 const eric = new Contact('Eric');
 

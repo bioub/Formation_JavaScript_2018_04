@@ -10,7 +10,11 @@ nbs.filter((nb) => nb % 2 === 0)
 const sum = nbs.reduce((acc, nb) => acc + nb, 0);
 console.log('sum', sum);
 
-// ES6 : find, findIndex, Edge (pas IE)
+// 0 + 2 = 2
+// 2 + 3 = 5
+// 5 + 4 = 9
+
+// ES6 : find, findIndex, (MS Edge, pas IE)
 
 function setTimeoutSync(cb, delay) {
   const debut = Date.now();
