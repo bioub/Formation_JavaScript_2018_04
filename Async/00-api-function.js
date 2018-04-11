@@ -79,7 +79,7 @@ const btns = document.querySelectorAll('.btn-delete');
 btns.forEach((btn) => {
   btn.addEventListener('click', (event) => {
     // NE PLUS UTILISER this
-    event.target.parentNode.parentNode.removeChild(this.parentNode);
+    event.target.parentNode.parentNode.removeChild(event.target.parentNode);
   });
 });
 */

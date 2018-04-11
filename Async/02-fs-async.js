@@ -27,7 +27,7 @@ fs.stat(logDir, (err, stats) => {
   }
 
   next();
-})
+});
 
 function next() {
   // Callback Hell / Pyramid of Doom

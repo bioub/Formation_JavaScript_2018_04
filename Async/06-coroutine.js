@@ -13,3 +13,4 @@ co(function *() {
 }).then(() => {
   console.log('3s');
 });
+

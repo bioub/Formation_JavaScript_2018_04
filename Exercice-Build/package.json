@@ -1,0 +1,16 @@
+{
+  "devDependencies": {
+    "del": "^3.0.0",
+    "eslint": "^4.19.1",
+    "fs-extra": "^5.0.0",
+    "http-server": "^0.10.0",
+    "md5": "^2.2.1",
+    "uglify-es": "^3.1.10"
+  },
+  "scripts": {
+    "serve:dev": "hs src",
+    "serve:prod": "hs dist",
+    "build": "node build.js"
+  },
+  "dependencies": {}
+}

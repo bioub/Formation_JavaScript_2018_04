@@ -40,14 +40,14 @@ class Jeu {
       input: process.stdin,
       output: process.stdout
     });
-    
+
     this._entierAlea = random.getIntInclusive(min, max);
     this._essais = [];
   }
   jouer() {
     if (this._essais.length) {
       // 5 - Template literal
-      console.log(`Vous avez déjà joué : ${this._essais.join(' - ')}`);
+      console.log(`Vous avez déjà joué : ${this._essais.join(' - ')} !`);
     }
     this._rl.question('Quel est le nombre ? ', (answer) => {
       // 6 - API Number parseInt, isNaN
