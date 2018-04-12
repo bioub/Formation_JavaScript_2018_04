@@ -1,6 +1,8 @@
 import format from 'date-fns/format';
 import config from '../config/config.json';
 
+// import '../css/horloge.css';
+
 class Horloge {
   /**
    * @constructor

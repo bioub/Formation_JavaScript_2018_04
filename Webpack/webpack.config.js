@@ -1,4 +1,18 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
+
+// 1 - Utiliser BannerPlugin pour ajouter
+// © Moi 2018 (date en dynamique)
+
+// 2 - Utiliser json5-loader pour permettre le
+// chargement de fichier .json5
+// https://webpack.js.org/loaders/json5-loader/
+
+// 3 - optionnel
+// Utiliser css-loader et style-loader en mode development
+// En prod utiliser ExtractTextPlugin pour extraire dans
+// un fichier css et balise link
+// https://webpack.js.org/loaders/css-loader/#extract
 
 module.exports = (env, {mode}) => {
   const minify = mode === 'production' ? {
