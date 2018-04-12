@@ -1,7 +1,7 @@
 import format from 'date-fns/format';
-import config from '../config/config.json';
+import config from '../config/config.json5';
 
-// import '../css/horloge.css';
+import '../css/horloge.css';
 
 class Horloge {
   /**

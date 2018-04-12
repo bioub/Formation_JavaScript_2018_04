@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 
 // 1 - Utiliser BannerPlugin pour ajouter
@@ -21,6 +22,35 @@ module.exports = (env, {mode}) => {
     removeScriptTypeAttributes: true,
   } : false;
 
+  const plugins = [
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      chunks: ['vendor', 'commons', 'index'],
+      minify
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/page1.html',
+      filename: 'page1.html',
+      chunks: ['vendor', 'page1'],
+      minify
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/page2.html',
+      filename: 'page2.html',
+      chunks: ['vendor', 'commons', 'page2'],
+      minify
+    }),
+    new webpack.BannerPlugin({
+      banner: `© Moi ${(new Date).getFullYear()}`,
+    }),
+  ];
+
+  if (mode === 'production') {
+     plugins.push(new ExtractTextPlugin({
+      filename: '[name].[chunkhash].css'
+    }))
+  }
+
   return {
     entry: {
       index: './src/js/index',
@@ -30,25 +60,7 @@ module.exports = (env, {mode}) => {
     output: {
       filename: mode === 'production' ? '[name].[chunkhash].js' : '[name].js',
     },
-    plugins: [
-      new HtmlWebpackPlugin({
-        template: './src/index.html',
-        chunks: ['vendor', 'commons', 'index'],
-        minify
-      }),
-      new HtmlWebpackPlugin({
-        template: './src/page1.html',
-        filename: 'page1.html',
-        chunks: ['vendor', 'page1'],
-        minify
-      }),
-      new HtmlWebpackPlugin({
-        template: './src/page2.html',
-        filename: 'page2.html',
-        chunks: ['vendor', 'commons', 'page2'],
-        minify
-      }),
-    ],
+    plugins,
     module: {
       rules: [{
         test: /\.js$/,
@@ -63,6 +75,17 @@ module.exports = (env, {mode}) => {
             }]]
           }
         }
+      }, {
+        test: /\.json5$/,
+        loader: 'json5-loader',
+      }, {
+        test: /\.css$/,
+        use: mode === 'production'
+        ? ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: [ 'css-loader' ]
+        })
+        : [ 'style-loader', 'css-loader' ]
       }]
     },
     optimization: {
