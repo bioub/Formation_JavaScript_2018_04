@@ -37,8 +37,9 @@ async function buildHtml() {
   const buffer = await fs.readFile(indexHtmlPath);
   let content = buffer.toString();
 
-  content = content.replace('<script src="./js/horloge.js"></script>', '');
-  content = content.replace('<script src="./js/index.js"></script>', '<script src="./app.js"></script>');
+  // content = content.replace('<script src="./js/horloge.js"></script>', '');
+  // content = content.replace('<script src="./js/index.js"></script>', '<script src="./app.js"></script>');
+  content = content.replace(/<script.*>.*<\/script>/, '<script src="./app.js"></script>');
 
   await fs.writeFile(indexHtmlDistPath, content);
 

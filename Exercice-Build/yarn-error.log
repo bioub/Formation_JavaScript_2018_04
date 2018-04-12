@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/Cellar/node/9.7.1_1/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js run builld
+  /usr/local/Cellar/node/9.7.1_1/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js i
 
 PATH: 
   /usr/local/sbin:/usr/local/bin:/Users/romain/.composer/vendor/zendframework/zendframework1/bin:/Users/romain/.composer/vendor/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/sbin:/Users/romain/.composer/vendor/zendframework/zendframework1/bin:/Users/romain/.composer/vendor/bin
@@ -17,7 +17,8 @@ npm manifest:
   {
     "devDependencies": {
       "del": "^3.0.0",
-      "fs-extra": "^4.0.2",
+      "eslint": "^4.19.1",
+      "fs-extra": "^5.0.0",
       "http-server": "^0.10.0",
       "md5": "^2.2.1",
       "uglify-es": "^3.1.10"
@@ -362,7 +363,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
 
 Trace: 
-  Error: Command "builld" not found. Did you mean "build"?
+  Error: Command "i" not found.
       at new MessageError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:186:110)
       at /usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:87307:17
       at Generator.next (<anonymous>)
