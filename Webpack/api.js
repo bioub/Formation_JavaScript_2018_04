@@ -7,6 +7,7 @@ app.use(cors()); // Cross Origin Resource Sharing
 // Req : Origin: localhost:8080
 // Res : Allow-Access-Control-Origin: *
 
+/*
 app.use((req, res, next) => {
   console.log('Authorization', req.headers.authorization);
 
@@ -19,6 +20,7 @@ app.use((req, res, next) => {
     msg: 'Unauthorized',
   });
 });
+*/
 
 const todos = [{
   id: 1,

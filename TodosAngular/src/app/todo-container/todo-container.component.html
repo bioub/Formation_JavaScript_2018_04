@@ -11,5 +11,5 @@ Dans TodoListComponent, rechercher dans le tableau l'indice avec indexOf
 et supprimer du tableau avec splice (indexOf, splice regarder MDN)
 -->
 
-<app-todo-form (add)="handleAdd($event)"></app-todo-form>
+<app-todo-form (toggleAll)="handleToggleAll($event)" (add)="handleAdd($event)"></app-todo-form>
 <app-todo-list [todos]="todos"></app-todo-list>

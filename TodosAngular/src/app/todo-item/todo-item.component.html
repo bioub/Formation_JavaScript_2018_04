@@ -2,6 +2,6 @@
   <span>
     <input type="checkbox" [checked]="todo.done">
   </span>
-  <input [value]="todo.value">
-  <button>-</button>
+  <input [value]="todo.value" class="todo">
+  <button (click)="handleRemove()">-</button>
 </div>

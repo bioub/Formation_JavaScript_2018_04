@@ -7,6 +7,8 @@ import { TodoContainerComponent } from './todo-container/todo-container.componen
 import { TodoFormComponent } from './todo-form/todo-form.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
+import { TodosService } from './todos.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -20,8 +22,16 @@ import { TodoItemComponent } from './todo-item/todo-item.component';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    /*{provide: TodosService, useClass: TodosService}*/
+    TodosService,
+
+    /* dans un test
+    {provide: TodosService, useValue: TodosServiceMock}
+    */
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

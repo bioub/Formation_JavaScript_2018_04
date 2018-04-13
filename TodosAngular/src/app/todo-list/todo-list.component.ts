@@ -16,4 +16,9 @@ export class TodoListComponent implements OnInit {
   ngOnInit() {
   }
 
+  removeTodo(todo) {
+    const i = this.todos.indexOf(todo);
+    this.todos.splice(i, 1);
+  }
+
 }

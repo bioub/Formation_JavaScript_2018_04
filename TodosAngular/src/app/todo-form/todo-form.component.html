@@ -1,7 +1,11 @@
-<form (submit)="handleSubmit()">
+<form (submit)="form.valid && handleSubmit()" #form="ngForm">
   <span>
-    <input type="checkbox">
+    <input name="toggle" type="checkbox"
+           (change)="handleChange()" [(ngModel)]="toggle">
   </span>
-  <input name="todo" [(ngModel)]="newTodo.value">
-  <button>+</button>
+  <input name="todo" [(ngModel)]="newTodo.value" required #todo="ngModel">
+  <button [disabled]="form.invalid">+</button>
 </form>
+<div class="error" *ngIf="todo.invalid && (todo.touched || form.submitted)">
+  Il faut remplir la todo
+</div>

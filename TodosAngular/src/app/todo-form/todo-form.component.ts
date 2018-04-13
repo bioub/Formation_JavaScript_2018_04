@@ -10,7 +10,12 @@ export class TodoFormComponent implements OnInit {
 
   @Output()
   public add = new EventEmitter<Todo>();
+
+  @Output()
+  public toggleAll = new EventEmitter<boolean>();
+
   public newTodo = new Todo();
+  public toggle = false;
 
   constructor() { }
 
@@ -25,5 +30,9 @@ export class TodoFormComponent implements OnInit {
     /* ES9 */
     const clonedTodo = {...this.newTodo};
     this.add.emit(clonedTodo);
+  }
+
+  handleChange() {
+    this.toggleAll.emit(this.toggle);
   }
 }
