@@ -1,0 +1,5 @@
+<app-todo-item [todo]="todo" *ngFor="let todo of todos; let i = index;"></app-todo-item>
+
+<ng-container *ngIf="!todos.length"> <!-- ng-container n'apparait pas dans le DOM -->
+  Pas de todos
+</ng-container>

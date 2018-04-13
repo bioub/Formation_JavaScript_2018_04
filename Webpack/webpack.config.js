@@ -29,9 +29,9 @@ module.exports = (env, {mode}) => {
       minify
     }),
     new HtmlWebpackPlugin({
-      template: './src/page1.html',
-      filename: 'page1.html',
-      chunks: ['vendor', 'page1'],
+      template: './src/todos.html',
+      filename: 'todos.html',
+      chunks: ['vendor', 'commons', 'todos'],
       minify
     }),
     new HtmlWebpackPlugin({
@@ -52,9 +52,10 @@ module.exports = (env, {mode}) => {
   }
 
   return {
+    devtool: false,
     entry: {
       index: './src/js/index',
-      page1: './src/js/page1',
+      todos: './src/js/todos',
       page2: './src/js/page2',
     },
     output: {
@@ -70,7 +71,7 @@ module.exports = (env, {mode}) => {
           options: {
             presets: [['env', {
               targets: {
-                browsers: ['Chrome >= 65', 'IE >= 10']
+                browsers: ['Chrome >= 65', 'IE >= 10'], // ajouter core-js dans le code
               }
             }]]
           }
@@ -88,6 +89,7 @@ module.exports = (env, {mode}) => {
         : [ 'style-loader', 'css-loader' ]
       }]
     },
+    // new Webpack 4
     optimization: {
       splitChunks: {
         cacheGroups: {

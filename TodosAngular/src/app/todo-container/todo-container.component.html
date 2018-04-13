@@ -1,0 +1,15 @@
+<!--
+1 - Dans TodoFormComponent :
+Au (click) ou au (change) de la checkbox
+Remonter au parent avec un event (toggleCheck) true ou false
+Appliquer cette valeur à tous les élements du tableau (dans TodoContainer)
+
+2 - Dans TodoItemComponent
+Au (click) du bouton moins
+Remonter au parent avec un event (remove) la todo à supprimer
+Dans TodoListComponent, rechercher dans le tableau l'indice avec indexOf
+et supprimer du tableau avec splice (indexOf, splice regarder MDN)
+-->
+
+<app-todo-form (add)="handleAdd($event)"></app-todo-form>
+<app-todo-list [todos]="todos"></app-todo-list>

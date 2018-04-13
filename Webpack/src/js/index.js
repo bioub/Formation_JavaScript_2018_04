@@ -1,5 +1,10 @@
 import { Horloge } from './horloge';
 
-const divElt = document.querySelector('.horloge');
-const clock = new Horloge(divElt);
-clock.start();
+const divElts = document.body.querySelectorAll('.horloge');
+
+const divEltsArray = Array.from(divElts);
+
+for (const divElt of divEltsArray) {
+  const clock = new Horloge(divElt);
+  clock.start();
+}

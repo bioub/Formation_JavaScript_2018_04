@@ -1,5 +1,8 @@
 {
   horloge: {
     format: 'HH:mm:ss', // Format de l'horloge
-  }
+  },
+  api: {
+    baseUrl: 'http://localhost:3000',
+  },
 }

@@ -11,6 +11,15 @@
 		},
 		{
 			"path": "Webpack"
+		},
+		{
+			"path": "WebAPIs"
+		},
+		{
+			"path": "TodosAngular"
+		},
+		{
+			"path": "TodosAngularMinimal"
 		}
 	],
 	"settings": {}
